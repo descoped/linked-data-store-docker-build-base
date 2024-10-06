@@ -2,7 +2,7 @@
 
 list_snapshots() {
   perl -0ne 'while(/<dependency>(.*?)<\/dependency>/sg) { print "$1\0" }' | \
-  perl -0ne '/<groupId>no\.ssb\..*<\/groupId>/ && /<version>.*-SNAPSHOT<\/version>/ && /.*<artifactId>(.*)<\/artifactId>/ && print "$1\n"'
+  perl -0ne '/<groupId>no\.descoped\..*<\/groupId>/ && /<version>.*-SNAPSHOT<\/version>/ && /.*<artifactId>(.*)<\/artifactId>/ && print "$1\n"'
 }
 
 git_clone() {
